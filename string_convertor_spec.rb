@@ -36,6 +36,20 @@ RSpec.describe "StringConvertor" do
                 expect(StringConvertor.convert("7,8\n9,10")).to eq(34)
             end
         end
+        context "when input contains a different delimiter" do
+            it "should return the sum of the numbers" do
+              expect(StringConvertor.convert("//;\n1;2")).to eq(3)
+            end
+            it "should return the sum of the numbers" do
+                expect(StringConvertor.convert("//;\n1\n\n\n\n;2")).to eq(3)
+            end
+            it "should return the sum of the numbers" do
+                expect(StringConvertor.convert("//,\n1,2,,,,,5,,,")).to eq(8)
+            end
+            it "should return the sum of the numbers" do
+                expect(StringConvertor.convert("//!\n1!10!!")).to eq(11)
+            end
+        end
        
     end
 end
