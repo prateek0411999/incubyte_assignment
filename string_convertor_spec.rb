@@ -50,6 +50,17 @@ RSpec.describe "StringConvertor" do
                 expect(StringConvertor.convert("//!\n1!10!!")).to eq(11)
             end
         end
+        context "when input contains negative numbers" do
+            it "raises an error with the negative numbers listed" do
+              expect { StringConvertor.convert("1,-2,3,-4") }.to raise_error("negative numbers not allowed -2,-4")
+            end
+            it "raises an error with the negative numbers listed" do
+                expect { StringConvertor.convert("-11,-2,-3,-4") }.to raise_error("negative numbers not allowed -11,-2,-3,-4")
+            end
+            it "raises an error with the negative numbers listed" do
+                expect { StringConvertor.convert("-11,-2,3,4") }.to raise_error("negative numbers not allowed -11,-2")
+            end
+        end
        
     end
 end
