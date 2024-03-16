@@ -26,21 +26,16 @@ RSpec.describe "StringConvertor" do
             it "should return the sum of the numbers" do
               expect(StringConvertor.convert("1\n2,3")).to eq(6)
             end
-        end
-        context "when input contains new lines between numbers" do
             it "should return the sum of the numbers" do
-              expect(StringConvertor.convert("\n4\n5,6")).to eq(15)
+                expect(StringConvertor.convert("\n4\n5,6")).to eq(15)
+            end
+            it "should return the sum of the numbers" do
+                expect(StringConvertor.convert("7\n8\n9")).to eq(24)
+            end
+            it "should return the sum of the numbers" do
+                expect(StringConvertor.convert("7,8\n9,10")).to eq(34)
             end
         end
-        context "when input contains new lines between numbers" do
-            it "should return the sum of the numbers" do
-              expect(StringConvertor.convert("7\n8\n9")).to eq(24)
-            end
-        end
-        context "when input contains new lines between numbers" do
-            it "should return the sum of the numbers" do
-              expect(StringConvertor.convert("7,8\n9,10")).to eq(34)
-            end
-        end
+       
     end
 end
