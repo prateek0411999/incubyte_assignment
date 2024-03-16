@@ -17,5 +17,10 @@ RSpec.describe "StringConvertor" do
               expect(StringConvertor.convert("1")).to eq(1)
             end
         end
+        context "when input is two numbers separated by a comma" do
+            it "should return the sum of the numbers" do
+              expect(StringConvertor.convert("1,5")).to eq(6)
+            end
+        end
     end
 end
