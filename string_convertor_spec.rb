@@ -41,7 +41,7 @@ RSpec.describe "StringConvertor" do
               expect(StringConvertor.convert("//;\n1;2")).to eq(3)
             end
             it "should return the sum of the numbers" do
-                expect(StringConvertor.convert("//;\n1\n\n\n\n;2")).to eq(3)
+                expect(StringConvertor.convert("//;\n1;;;;;;2")).to eq(3)
             end
             it "should return the sum of the numbers" do
                 expect(StringConvertor.convert("//,\n1,2,,,,,5,,,")).to eq(8)
