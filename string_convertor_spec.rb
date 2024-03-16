@@ -7,5 +7,10 @@ RSpec.describe "StringConvertor" do
                 expect(StringConvertor).to respond_to(:convert)
             end 
         end 
-    end 
-end 
+        context "when input is an empty string" do
+            it "should return 0" do
+              expect(StringConvertor.convert("")).to eq(0)
+            end
+        end
+    end
+end
